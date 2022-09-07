@@ -5,17 +5,18 @@ import '../const.dart';
 class PrimaryText extends StatelessWidget {
 
   final String? text;
-  final Color color;
+  final Color? color;
   final FontWeight fontWeight;
   final double size;
   final TextOverflow overflow;
 
-  const PrimaryText(
-      {required this.text,
-        this.color = Colors.black,
-        this.fontWeight = FontWeight.w700,
-        this.size = 17,
-        this.overflow = TextOverflow.visible});
+  const PrimaryText({
+    this.text,
+    this.color = Colors.black,
+    this.size = 16,
+    this.fontWeight = FontWeight.w700,
+    this.overflow = TextOverflow.visible,
+  });
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -24,7 +25,7 @@ class PrimaryText extends StatelessWidget {
       style: TextStyle(
           fontFamily: 'Quicksand',
           fontSize: size,
-          color: Colors.white,
+          color: color,
           fontWeight: fontWeight),
     );
   }

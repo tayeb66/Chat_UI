@@ -15,8 +15,14 @@ class ChatPage extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height - 200,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              color: Colors.white
+                borderRadius: BorderRadius.circular(40), color: Colors.white),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 310,
+                ),
+               footerInput(),
+              ],
             ),
           )
         ],
@@ -25,9 +31,45 @@ class ChatPage extends StatelessWidget {
   }
 }
 
+Padding footerInput(){
+  return  Padding(
+    padding: EdgeInsets.symmetric(
+      horizontal: 10,
+    ),
+    child: TextField(
+      decoration: InputDecoration(
+        hintText: 'Enter your message...',
+        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        hintStyle: TextStyle(
+            color: Colors.grey[500],
+            fontWeight: FontWeight.w500),
+        fillColor: Colors.grey[200],
+        filled: true,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide:
+          BorderSide(width: 0, style: BorderStyle.none),
+        ),
+        suffixIcon:  RawMaterialButton(
+          constraints: BoxConstraints(minWidth: 0),
+          fillColor: Color(0xff5b61b9),
+          shape: CircleBorder(),
+          elevation: 2.0,
+          padding: EdgeInsets.all(3),
+          onPressed: () {},
+          child: Icon(
+            Icons.send,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
 Padding header() {
   return Padding(
-    padding: EdgeInsets.only(left: 40, top: 20, bottom: 40,right: 30),
+    padding: EdgeInsets.only(left: 40, top: 20, bottom: 40, right: 30),
     child: Row(
       children: [
         PrimaryText(
@@ -49,7 +91,9 @@ Padding header() {
             color: Colors.white,
           ),
         ),
-        SizedBox(width: 5,),
+        SizedBox(
+          width: 5,
+        ),
         RawMaterialButton(
           constraints: BoxConstraints(minWidth: 0),
           fillColor: Colors.white38,

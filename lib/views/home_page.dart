@@ -14,12 +14,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5b61b9),
+      backgroundColor: const Color(0xff5b61b9),
       body: ListView(
         children: [
           const Header(),
           Container(
-            padding: EdgeInsets.only(top: 40,right: 20,left: 20),
+            padding: const EdgeInsets.only(top: 40,right: 20,left: 20),
             height: MediaQuery.of(context).size.height - 220,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40), color: Colors.white),
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                   child: ListTile(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => ChatPage()));
+                          MaterialPageRoute(builder: (context) => const ChatPage()));
                     },
                     leading: Avatar(imagePath: userList[index]['avatar']),
                     title: Row(

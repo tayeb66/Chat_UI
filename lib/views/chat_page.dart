@@ -10,26 +10,34 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff5b61b9),
       body: ListView(
+        shrinkWrap: true,
         children: [
-          CustomApp(),
+          const CustomApp(),
           header(),
           Container(
-            height: MediaQuery.of(context).size.height - 200,
+            height: MediaQuery.of(context).size.height - 230,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40), color: Colors.white),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(40),
+                    topLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(0),
+                    bottomLeft: Radius.circular(0)),
+                color: Colors.white),
             child: Column(
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height - 310,
                   padding: EdgeInsets.only(top: 40, left: 30, right: 30),
                   child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
                     itemCount: messages.length,
-                    itemBuilder: (context, index) =>
-                    messages[index]['from'] == 'sender'
-                        ? senderMessage(messages[index]['message'],
-                        messages[index]['time'])
+                    itemBuilder: (context, index) => messages[index]['from'] ==
+                            'sender'
+                        ? senderMessage(
+                            messages[index]['message'], messages[index]['time'])
                         : receiverMessage(messages[index]['message'],
-                        messages[index]['time']),
+                            messages[index]['time']),
                   ),
                 ),
                 footerInput(),
@@ -142,24 +150,24 @@ Padding footerInput() {
 // header part
 Padding header() {
   return Padding(
-    padding: EdgeInsets.only(left: 40, top: 20, bottom: 40, right: 30),
+    padding: const EdgeInsets.only(left: 40, top: 20, bottom: 40, right: 30),
     child: Row(
       children: [
-        PrimaryText(
+        const PrimaryText(
           text: 'Tannaz\nSadeghi',
           size: 32,
           color: Colors.white,
           fontWeight: FontWeight.w900,
         ),
-        Spacer(),
+        const Spacer(),
         RawMaterialButton(
-          constraints: BoxConstraints(minWidth: 0),
+          constraints: const BoxConstraints(minWidth: 0),
           fillColor: Colors.white38,
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           elevation: 2.0,
-          padding: EdgeInsets.all(7),
+          padding: const EdgeInsets.all(7),
           onPressed: () {},
-          child: Icon(
+          child: const Icon(
             Icons.call,
             color: Colors.white,
           ),
@@ -175,7 +183,7 @@ Padding header() {
           padding: EdgeInsets.all(7),
           onPressed: () {},
           child: Icon(
-            Icons.call,
+            Icons.video_call,
             color: Colors.white,
           ),
         ),

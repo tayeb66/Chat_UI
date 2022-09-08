@@ -10,7 +10,7 @@ class PrimaryText extends StatelessWidget {
   final double size;
   final TextOverflow overflow;
 
-  const PrimaryText({
+  const PrimaryText({super.key,
     this.text,
     this.color = Colors.black,
     this.size = 16,
@@ -36,7 +36,7 @@ class Avatar extends StatelessWidget {
  final double? height;
  final double? weight;
 
- const Avatar({required this.imagePath,this.height = 60,this.weight = 60});
+ const Avatar({super.key, required this.imagePath,this.height = 60,this.weight = 60});
 
   @override
   Widget build(BuildContext context) {
@@ -58,17 +58,17 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 40, left: 30),
+      padding: const EdgeInsets.only(top: 40, left: 30),
       height: 220,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          PrimaryText(
+          const PrimaryText(
               text: 'Chat with\nyour friends',
               fontWeight: FontWeight.w900,
               color: Colors.white,
               size: 32),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           SizedBox(
             height: 60,
             child: ListView.builder(
@@ -103,14 +103,14 @@ class CustomApp extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text(
+            child: const Text(
               'Back',
               style: TextStyle(color: Colors.white54),
             ),
           ),
           TextButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               'Search',
               style: TextStyle(color: Colors.white54),
             ),

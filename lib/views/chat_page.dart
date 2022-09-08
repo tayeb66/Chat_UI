@@ -8,7 +8,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff5b61b9),
+      backgroundColor: const Color(0xff5b61b9),
       body: ListView(
         shrinkWrap: true,
         children: [
@@ -16,7 +16,7 @@ class ChatPage extends StatelessWidget {
           header(),
           Container(
             height: MediaQuery.of(context).size.height - 230,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(40),
                     topLeft: Radius.circular(40),
@@ -27,7 +27,7 @@ class ChatPage extends StatelessWidget {
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height - 310,
-                  padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+                  padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
                   child: ListView.builder(
                     scrollDirection: Axis.vertical,
                     shrinkWrap: true,
@@ -59,10 +59,10 @@ Widget senderMessage(String? message, String? time) {
       children: [
         PrimaryText(text: time, size: 14, color: Colors.grey[400]),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           decoration: BoxDecoration(
               color: Colors.grey[400],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),
                   bottomLeft: Radius.circular(25),
@@ -82,20 +82,20 @@ Widget receiverMessage(String? message, String? time) {
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Avatar(
+            const Avatar(
               imagePath: 'assets/images/avatar-1.png',
               height: 30,
               weight: 30,
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Container(
-              constraints: BoxConstraints(minWidth: 100, maxWidth: 200),
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              constraints: const BoxConstraints(minWidth: 100, maxWidth: 200),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               decoration: BoxDecoration(
                   color: Colors.grey[400],
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25),
                       bottomLeft: Radius.circular(0),
@@ -105,7 +105,7 @@ Widget receiverMessage(String? message, String? time) {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         PrimaryText(text: time, size: 14, color: Colors.grey[400]),
       ],
     ),
@@ -115,29 +115,29 @@ Widget receiverMessage(String? message, String? time) {
 // footer part
 Padding footerInput() {
   return Padding(
-    padding: EdgeInsets.symmetric(
+    padding: const EdgeInsets.symmetric(
       horizontal: 10,
     ),
     child: TextField(
       decoration: InputDecoration(
         hintText: 'Enter your message...',
-        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         hintStyle:
             TextStyle(color: Colors.grey[500], fontWeight: FontWeight.w500),
         fillColor: Colors.grey[200],
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
-          borderSide: BorderSide(width: 0, style: BorderStyle.none),
+          borderSide: const BorderSide(width: 0, style: BorderStyle.none),
         ),
         suffixIcon: RawMaterialButton(
-          constraints: BoxConstraints(minWidth: 0),
-          fillColor: Color(0xff5b61b9),
-          shape: CircleBorder(),
+          constraints: const BoxConstraints(minWidth: 0),
+          fillColor: const Color(0xff5b61b9),
+          shape: const CircleBorder(),
           elevation: 2.0,
-          padding: EdgeInsets.all(3),
+          padding: const EdgeInsets.all(3),
           onPressed: () {},
-          child: Icon(
+          child: const Icon(
             Icons.send,
             color: Colors.white,
           ),
@@ -172,17 +172,17 @@ Padding header() {
             color: Colors.white,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         RawMaterialButton(
-          constraints: BoxConstraints(minWidth: 0),
+          constraints: const BoxConstraints(minWidth: 0),
           fillColor: Colors.white38,
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           elevation: 2.0,
-          padding: EdgeInsets.all(7),
+          padding: const EdgeInsets.all(7),
           onPressed: () {},
-          child: Icon(
+          child: const Icon(
             Icons.video_call,
             color: Colors.white,
           ),
